@@ -13,7 +13,6 @@ class CreateBlades < ActiveRecord::Migration[5.1]
       t.text :battle_skills, array: true
       t.text :field_skills, array: true
       t.text :blade_arts, array: true
-      t.text :pouch_items, array: true
       t.text :pouch_categories, array: true
       t.text :obtained
 

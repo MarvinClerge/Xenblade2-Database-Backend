@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314015858) do
+ActiveRecord::Schema.define(version: 20180314030212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,11 +28,32 @@ ActiveRecord::Schema.define(version: 20180314015858) do
     t.text "battle_skills", array: true
     t.text "field_skills", array: true
     t.text "blade_arts", array: true
-    t.text "pouch_items", array: true
     t.text "pouch_categories", array: true
     t.text "obtained"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "pouch_blades", force: :cascade do |t|
+    t.bigint "blade_id"
+    t.bigint "pouch_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blade_id"], name: "index_pouch_blades_on_blade_id"
+    t.index ["pouch_id"], name: "index_pouch_blades_on_pouch_id"
+  end
+
+  create_table "pouches", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "category"
+    t.string "location"
+    t.string "duration"
+    t.string "effects", array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "pouch_blades", "blades"
+  add_foreign_key "pouch_blades", "pouches"
 end
