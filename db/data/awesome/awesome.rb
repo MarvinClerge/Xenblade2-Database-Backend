@@ -1,13 +1,19 @@
 # "Blades, Affinity, Skills" Sheet[2]
 require_relative './sheets/blade1.rb'
 
-# "Blade Stats Sheet[3]
-# require_relative './sheets/blade2.rb'
+# "Blade Stats" Sheet[3]
+require_relative './sheets/blade2.rb'
+
+# "Item Locations" Sheet[6]
+require_relative './sheets/item1.rb'
 
 # data = Roo::Spreadsheet.open('./Awesome.xlsx')
 # p data.sheets
 
 parse_blade1
+parse_blade2
+
+parse_items1
 
 def fix_values
   if blade[:obtained] == nil

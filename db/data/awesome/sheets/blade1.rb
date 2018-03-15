@@ -16,6 +16,8 @@ def parse_blade1
     filter = (0..3).to_a + (43..53).to_a + [20]
 
     if !filter.include?(i)
+      p "Getting blade1 information for #{row[0]}"
+
       #Create the ActiveRecord associations
       pouch1 = Pouch.find_or_create_by(
         name: row[4],

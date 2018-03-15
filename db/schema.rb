@@ -49,7 +49,10 @@ ActiveRecord::Schema.define(version: 20180314030212) do
     t.string "category"
     t.string "location"
     t.string "duration"
-    t.string "effects", array: true
+    t.string "first_effect", array: true
+    t.string "second_effect", array: true
+    t.string "third_effect", array: true
+    t.string "shop"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

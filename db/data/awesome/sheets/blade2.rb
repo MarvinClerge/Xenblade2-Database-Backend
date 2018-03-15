@@ -13,6 +13,8 @@ def parse_blade2
     row = data.row(i, sheet)
 
     if row[0] && !filter.include?(row[0])
+      p "Getting blade2 information for #{row[0]}"
+
       stats = {
         name: row[0],
         aux_cores: row[4],

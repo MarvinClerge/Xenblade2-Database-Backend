@@ -6,7 +6,10 @@ class CreatePouches < ActiveRecord::Migration[5.1]
       t.string :category
       t.string :location
       t.string :duration
-      t.string :effects, array: true
+      t.string :first_effect, array: true
+      t.string :second_effect, array: true
+      t.string :third_effect, array: true
+      t.string :shop
 
       t.timestamps
     end
